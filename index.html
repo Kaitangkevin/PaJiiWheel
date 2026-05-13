@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>PaJii啪唧电竞 - 幸运大转盘</title>
+    <meta
+      name="description"
+      content="PaJii啪唧电竞幸运大转盘，打开页面即可参与抽奖，中奖后截图发送给客服核销。"
+    />
+    <meta name="theme-color" content="#111827" />
+    <meta property="og:title" content="PaJii啪唧电竞 - 幸运大转盘" />
+    <meta
+      property="og:description"
+      content="立即参与抽奖，中奖后截图发送给客服核销。"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="brand">PaJii啪唧电竞</p>
+        <h1>幸运大转盘抽奖</h1>
+        <p class="hero-text">
+          点击下方按钮即可抽奖，中奖后截图发送给客服核销。
+        </p>
+      </header>
+
+      <main class="main-card">
+        <section class="wheel-section" aria-labelledby="wheel-title">
+          <div class="section-head">
+            <h2 id="wheel-title">今日好运已就位</h2>
+            <p id="probability-note" class="hint-text"></p>
+          </div>
+
+          <div class="wheel-stage">
+            <div class="pointer" aria-hidden="true"></div>
+            <div class="wheel-ring">
+              <canvas
+                id="wheelCanvas"
+                width="720"
+                height="720"
+                aria-label="幸运抽奖转盘"
+              ></canvas>
+            </div>
+          </div>
+
+          <div class="action-panel">
+            <button id="drawButton" class="draw-button" type="button">
+              立即抽奖
+            </button>
+            <p id="statusText" class="status-text">
+              抽中奖品后，请截图本页面发送给客服核销。
+            </p>
+          </div>
+        </section>
+
+        <section class="rules-section" aria-labelledby="rules-title">
+          <h2 id="rules-title">活动规则</h2>
+          <ol id="rulesList" class="rules-list"></ol>
+        </section>
+      </main>
+    </div>
+
+    <div id="resultModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+      <div class="modal-card">
+        <p class="modal-tag">抽奖结果</p>
+        <h3 id="resultTitle">恭喜中奖</h3>
+        <p id="resultText" class="modal-text"></p>
+        <button id="closeModalButton" class="modal-button" type="button">
+          我知道了
+        </button>
+      </div>
+    </div>
+
+    <script src="./config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
